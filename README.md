@@ -1,10 +1,14 @@
 # RoutesDumper
 
-TODO: Write a gem description
+Every time your routes.rb changes, a detailed summary is dumped to the `routes.txt`
+file at the Rails app root. The contents are similar to a `rake routes` output. The major differences are:
+
+* fixed width indentations, so routes.txt is diffable against backed up versions
+* MUCH faster if you use bundler, since the routes are already loaded inside the app
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile, preferrably inside the `development` group:
 
     gem 'routes_dumper'
 
@@ -12,13 +16,14 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install routes_dumper
-
 ## Usage
 
-TODO: Write usage instructions here
+Nothing to do. You should see the `routes.txt` after the first request of the server.
+It will be regenerated each time `routes.rb` is altered and a request is made.
+
+## Limitations
+
+I have done virtually no testing. It works for me on Rails 3.2.
 
 ## Contributing
 
